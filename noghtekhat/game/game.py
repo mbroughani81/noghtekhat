@@ -1,8 +1,5 @@
 import enum
 
-from noghtekhat.game.logic import cal_point, check_winner
-
-
 EMPTYCELL_STR = "."
 FULLCELL_STR = "x"
 
@@ -50,6 +47,7 @@ class Noghtekhat:
                 raise InvalidMove("line already filled!")
             self.table_ver[row][col] = FULLCELL_STR
         
+        from game.logic import cal_point
         point = cal_point(self, type, row, col)
         if point == 0:
             if self.turn == Turn.FIRST:
@@ -60,6 +58,7 @@ class Noghtekhat:
                 self.second_point += point
                 self.turn = Turn.FIRST
         
+        from game.logic import check_winner
         game_verdict = check_winner(self)
         if game_verdict != GameVerdict.RUNNIG:
             return f"it is player {self.turn.value}'s turn to play!"

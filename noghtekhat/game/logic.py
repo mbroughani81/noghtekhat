@@ -1,4 +1,4 @@
-from noghtekhat.game.game import EMPTYCELL_STR, FULLCELL_STR, GameVerdict, Noghtekhat
+from game.game import EMPTYCELL_STR, FULLCELL_STR, GameVerdict, Noghtekhat
 
 
 def cal_point(noghtekhat_game: Noghtekhat, type: str, row: int, col: int):
